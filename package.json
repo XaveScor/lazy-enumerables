@@ -1,0 +1,22 @@
+{
+  "name": "lazy-enumerables",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "keywords": [
+    "lazy",
+    "for-of",
+    "enumerable",
+    "list",
+    "array"
+  ],
+  "author": "XaveScor",
+  "license": "ISC",
+  "devDependencies": {
+    "path": "^0.12.7",
+    "rollup": "^0.59.3"
+  }
+}
