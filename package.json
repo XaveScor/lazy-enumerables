@@ -1,8 +1,9 @@
 {
   "name": "lazy-enumerables",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "dist/index.js",
+  "repository": "https://github.com/XaveScor/lazy-enumerables",
   "scripts": {
     "build": "rollup -c"
   },
