@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "repository": "https://github.com/XaveScor/lazy-enumerables",
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "test": "jest"
   },
   "keywords": [
     "lazy",
@@ -17,7 +18,8 @@
   "author": "XaveScor",
   "license": "ISC",
   "devDependencies": {
+    "jest": "^23.0.1",
     "path": "^0.12.7",
-    "rollup": "^0.59.3"
+    "rollup": "^0.59.4"
   }
 }
