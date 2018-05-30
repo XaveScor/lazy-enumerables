@@ -11,9 +11,13 @@ function composeRight(...funcs) {
 	}
 }
 
+function* toGenerator(list) {
+	yield* list
+}
+
 export function computeFrom(list) {
 	return function(...funcs) {
 		const enhanced = composeRight(...funcs)
-		return toList(enhanced(list))
+		return toList(enhanced(toGenerator(list)))
 	}
 }
