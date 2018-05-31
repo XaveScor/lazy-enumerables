@@ -1,3 +1,4 @@
-export {computeFrom} from './src/computeFrom'
-export {filter} from './src/filter'
-export {map} from './src/map'
+export * from './src/computeFrom'
+export * from './src/filter'
+export * from './src/map'
+export * from './src/first'
