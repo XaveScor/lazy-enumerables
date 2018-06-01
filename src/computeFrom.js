@@ -1,15 +1,5 @@
+import {composeReverse} from './composeReverse'
 import {toList} from './toList'
-
-function composeRight(...funcs) {
-	switch (funcs.length) {
-		case 0:
-			return _ => _
-		case 1:
-			return funcs[0]
-		default:
-			return funcs.reduceRight((total, cur) => (...args) => total(cur(...args)))
-	}
-}
 
 function* toGenerator(list) {
 	yield* list
@@ -17,7 +7,7 @@ function* toGenerator(list) {
 
 export function computeFrom(list) {
 	return function(...funcs) {
-		const enhanced = composeRight(...funcs)
-		return toList(enhanced(toGenerator(list)))
+		const enhanced = composeReverse(...funcs)
+		return composeReverse(toGenerator, enhanced, toList)(list)
 	}
 }

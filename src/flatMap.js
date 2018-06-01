@@ -1,7 +1,7 @@
+import {composeReverse} from './composeReverse'
+import {flatten} from './flatten'
+import {map} from './map'
+
 export function flatMap(pred) {
-	return function*(enumerable) {
-		for (const el of enumerable) {
-			yield* pred(el)
-		}
-	}
+	return composeReverse(map(pred), flatten)
 }
