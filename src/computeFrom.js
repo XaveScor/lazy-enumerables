@@ -1,5 +1,5 @@
 import {composeReverse} from './composeReverse'
-import {toList} from './toList'
+import {toArray} from './toArray'
 
 function* toGenerator(list) {
 	yield* list
@@ -8,6 +8,6 @@ function* toGenerator(list) {
 export function computeFrom(list) {
 	return function(...funcs) {
 		const enhanced = composeReverse(...funcs)
-		return composeReverse(toGenerator, enhanced, toList)(list)
+		return composeReverse(toGenerator, enhanced, toArray)(list)
 	}
 }
