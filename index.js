@@ -1,4 +1,6 @@
-export * from './src/computeFrom'
+export * from './src/lazyGenerator'
+export * from './src/lazyIterator'
+export * from './src/lazyString'
 export * from './src/filter'
 export * from './src/map'
 export * from './src/first'

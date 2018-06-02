@@ -1,13 +1,14 @@
-import {computeFrom} from '../computeFrom'
+import {lazyIterator} from '../lazyIterator'
 import {sort} from '../sort'
+import {toArray} from '../toArray'
 
 test('map::small sequence', () => {
-	const data = computeFrom([5, 4, 3, 2, 1])(sort())
+	const data = lazyIterator([5, 4, 3, 2, 1])(sort(), toArray)
 	expect(data).toEqual([1, 2, 3, 4, 5])
 })
 
 test('map::big sequence', () => {
-	const data = computeFrom([
+	const data = lazyIterator([
 		100,
 		99,
 		98,
@@ -108,7 +109,7 @@ test('map::big sequence', () => {
 		3,
 		2,
 		1,
-	])(sort())
+	])(sort(), toArray)
 	expect(data).toEqual([
 		1,
 		2,

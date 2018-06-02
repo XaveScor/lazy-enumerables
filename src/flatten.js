@@ -1,4 +1,4 @@
-const isIterable = object => object !== null && typeof object[Symbol.iterator] === 'function'
+import {isIterable} from './isIterable'
 
 export function* flatten(enumerable) {
 	for (const el of enumerable) {

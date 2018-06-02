@@ -1,12 +1,17 @@
-import {computeFrom} from '../computeFrom'
 import {first} from '../first'
+import {lazyIterator} from '../lazyIterator'
 
 test('first::empty', () => {
-	const data = computeFrom([1, 2, 3])(first())
-	expect(data).toEqual([1])
+	const data = lazyIterator([1, 2, 3])(first())
+	expect(data).toEqual(1)
 })
 
 test('first::cond', () => {
-	const data = computeFrom([1, 2, 3])(first(el => el === 2))
-	expect(data).toEqual([2])
+	const data = lazyIterator([1, 2, 3])(first(el => el === 2))
+	expect(data).toEqual(2)
+})
+
+test('first::not found', () => {
+	const data = lazyIterator([])(first())
+	expect(data).toBeNull()
 })

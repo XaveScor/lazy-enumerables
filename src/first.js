@@ -1,14 +1,10 @@
 export function first(pred = () => true) {
-	return function*(enumerable) {
-		while (true) {
-			const {value, done} = enumerable.next()
-			if (done) {
-				break
-			}
-			if (pred(value)) {
-				yield value
-				break
+	return function(enumerable) {
+		for (const el of enumerable) {
+			if (pred(el)) {
+				return el
 			}
 		}
+		return null
 	}
 }
