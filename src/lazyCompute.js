@@ -1,6 +1,12 @@
 import {composeReverse} from './composeReverse'
 
-export function lazyCompute(funcs, iterable) {
-	const totalFunc = composeReverse(...funcs)
-	return totalFunc(iterable)
+export function lazyCompute(iterable) {
+	const res = function(...funcs) {
+		const totalFunc = composeReverse(...funcs)
+		return totalFunc(iterable)
+	}
+	res[Symbol.iterator] = function*() {
+		yield* iterable
+	}
+	return res
 }

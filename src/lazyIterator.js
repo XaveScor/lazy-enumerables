@@ -5,7 +5,5 @@ function* toIterator(enumerable) {
 }
 
 export function lazyIterator(enumerable) {
-	return function(...funcs) {
-		return lazyCompute(funcs, toIterator(enumerable))
-	}
+	return lazyCompute(toIterator(enumerable))
 }

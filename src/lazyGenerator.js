@@ -14,7 +14,5 @@ function* generator(generate = () => null) {
 }
 
 export function lazyGenerator(generate = () => null) {
-	return function(...funcs) {
-		return lazyCompute(funcs, generator(generate))
-	}
+	return lazyCompute(generator(generate))
 }
