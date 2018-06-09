@@ -6,7 +6,8 @@
   "repository": "https://github.com/XaveScor/lazy-enumerables",
   "scripts": {
     "build": "rollup -c",
-    "test": "jest"
+    "test": "jest",
+    "bench": "rollup -c rollup.bench.js && node ./benchmarks/dist/bench.js"
   },
   "keywords": [
     "lazy",
@@ -21,6 +22,7 @@
     "babel-eslint": "^8.2.3",
     "babel-jest": "^23.0.1",
     "babel-preset-env": "^1.7.0",
+    "benchmark": "^2.1.4",
     "eslint": "^4.19.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-flowtype": "^2.49.3",
