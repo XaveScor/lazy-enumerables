@@ -1,5 +1,5 @@
 {
     "presets": [
-        "env"
+        ["env", {"targets": {"node": 8}}]
     ]
 }
